@@ -79,4 +79,4 @@ function replace(number) {
         return number;
     }
 }
-console.log(replace(randomArray));
+console.log(randomArray.map(replace));
