@@ -96,26 +96,22 @@ console.log(sum(5)(2).toString());
 console.log(sum(3)(7).toString());
 
 const colors = ['magenta', 'cyan', 'firebrick', 'springgreen', 'skyblue'];
-let currentColor1 = 0;
-let currentColor2 = 0;
-let currentColor3 = 0;
+
 const p1 = document.getElementById('text1');
 const p2 = document.getElementById('text2');
 const p3 = document.getElementById('text3');
-document.addEventListener('DOMContentLoaded', function () {
-  p1.addEventListener('click', function () {
-    currentColor1++;
-    if (currentColor1 > 4) currentColor1 = 0;
-    p1.style.color = colors[currentColor1];
-  });
-  p2.addEventListener('click', function () {
-    currentColor2++;
-    if (currentColor2 > 4) currentColor2 = 0;
-    p2.style.color = colors[currentColor2];
-  });
-  p3.addEventListener('click', function () {
-    currentColor3++;
-    if (currentColor3 > 4) currentColor3 = 0;
-    p3.style.color = colors[currentColor3];
-  });
-});
+const changeColor = () => {
+  let i = 0;
+  return function (event) {
+    event.target.style.color = colors[i];
+    i++;
+    if (i > colors.length) i = 0;
+  };
+};
+const changeColor1 = changeColor();
+const changeColor2 = changeColor();
+const changeColor3 = changeColor();
+
+p1.addEventListener('click', changeColor1);
+p2.addEventListener('click', changeColor2);
+p3.addEventListener('click', changeColor3);

@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 test ('When we click on p, color will change', () => {
-    expect(p1).toContain('magenta');
-    expect(p2).toContain('cyan');
-    expect(p3).toContain('firebrick');
+    expect(currentColor1).toContain('magenta');
+    expect(currentColor2).toContain('cyan');
+    expect(currentColor3).toContain('firebrick');
 });
