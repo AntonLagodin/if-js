@@ -100,18 +100,23 @@ const colors = ['magenta', 'cyan', 'firebrick', 'springgreen', 'skyblue'];
 const p1 = document.getElementById('text1');
 const p2 = document.getElementById('text2');
 const p3 = document.getElementById('text3');
-const changeColor = () => {
-  let i = 0;
-  return function (event) {
-    event.target.style.color = colors[i];
-    i++;
-    if (i > colors.length) i = 0;
-  };
-};
-const changeColor1 = changeColor();
-const changeColor2 = changeColor();
-const changeColor3 = changeColor();
+const paragraphs = [p1, p2, p3];
+for (let i = 0; i < paragraphs.length; i++){
+  paragraphs[i].addEventListener("click", changeColor(paragraphs[i]))
+}
+const pArray = document.getElementsByName("p");
+for (let i =0; i < pArray.length; i++) {
+  pArray[i].addEventListener("click", changeColor(pArray[i]))
+}
+function changeColor(elem) {
+  let counter = 0;
+  return function () {
+    if (counter === colors.length) {
+      counter = 0;
+    }
+    elem.style.color = colors[counter];
+    counter++
+  }
+}
 
-p1.addEventListener('click', changeColor1);
-p2.addEventListener('click', changeColor2);
-p3.addEventListener('click', changeColor3);
+module.exports = changeColor;

@@ -2,33 +2,57 @@
  * @jest-environment jsdom
  */
 
-const colors = ['magenta', 'cyan', 'firebrick', 'springgreen', 'skyblue'];
-let currentColor1 = 0;
-let currentColor2 = 0;
-let currentColor3 = 0;
-const p1 = document.getElementById('text1');
-const p2 = document.getElementById('text2');
-const p3 = document.getElementById('text3');
-document.addEventListener('DOMContentLoaded', function () {
-    p1.addEventListener('click', function () {
-        currentColor1++;
-        if (currentColor1 > 4) currentColor1 = 0;
-        p1.style.color = colors[currentColor1];
-    });
-    p2.addEventListener('click', function () {
-        currentColor2++;
-        if (currentColor2 > 4) currentColor2 = 0;
-        p2.style.color = colors[currentColor2];
-    });
-    p3.addEventListener('click', function () {
-        currentColor3++;
-        if (currentColor3 > 4) currentColor3 = 0;
-        p3.style.color = colors[currentColor3];
-    });
-});
+document.body.innerHTML = `
+    <p id="text1">Text 1</p>
+    <p id="text2">Text 2</p>
+    <p id="text3">Text 3</p>
+`;
 
-test ('When we click on p, color will change', () => {
-    expect(currentColor1).toContain('magenta');
-    expect(currentColor2).toContain('cyan');
-    expect(currentColor3).toContain('firebrick');
-});
+const changeColor = require("../src/main");
+
+describe('After click on p, text color should be change', () =>{
+    const p1 = document.getElementById("text1");
+    const p2 = document.getElementById("text2");
+    const p3 = document.getElementById("text3");
+    const paragraphs = [p1, p2, p3];
+    test('After first click expect color magenta',async() => {
+        for (let i = 0; i < paragraphs.length; i++) {
+            paragraphs[i].click();
+            changeColor(paragraphs[i])
+            const color = paragraphs[i].style.color;
+            expect(color).toBe('magenta')
+        }
+    })
+    test('After second click expect color cyan',async() => {
+        for (let i = 0; i < paragraphs.length; i++) {
+            paragraphs[i].click();
+            changeColor(paragraphs[i])
+            const color = paragraphs[i].style.color;
+            expect(color).toBe('cyan')
+        }
+    })
+    test('After third click expect color firebrick',async() => {
+        for (let i = 0; i < paragraphs.length; i++) {
+            paragraphs[i].click();
+            changeColor(paragraphs[i])
+            const color = paragraphs[i].style.color;
+            expect(color).toBe('firebrick')
+        }
+    })
+    test('After fourth click expect color springgreen',async() => {
+        for (let i = 0; i < paragraphs.length; i++) {
+            paragraphs[i].click();
+            changeColor(paragraphs[i])
+            const color = paragraphs[i].style.color;
+            expect(color).toBe('springgreen')
+        }
+    })
+    test('After fifth click expect color skyblue',async() => {
+        for (let i = 0; i < paragraphs.length; i++) {
+            paragraphs[i].click();
+            changeColor(paragraphs[i])
+            const color = paragraphs[i].style.color;
+            expect(color).toBe('skyblue')
+        }
+    })
+})
