@@ -104,10 +104,6 @@ const paragraphs = [p1, p2, p3];
 for (let i = 0; i < paragraphs.length; i++){
   paragraphs[i].addEventListener("click", changeColor(paragraphs[i]))
 }
-const pArray = document.getElementsByName("p");
-for (let i =0; i < pArray.length; i++) {
-  pArray[i].addEventListener("click", changeColor(pArray[i]))
-}
 function changeColor(elem) {
   let counter = 0;
   return function () {
