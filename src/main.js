@@ -1,3 +1,4 @@
+//lesson2
 let user = 'John Doe';
 console.log(user);
 const student = 'Anton Lagodin';
@@ -25,44 +26,17 @@ for (let k = 0; k < arr1.length; k++) {
     console.log(arr1[k]);
   }
 }
-function palindrome(str) {
-  str = str.toLowerCase().replace(/[^а-яa-z1-9]/gi, '');
-  const lastIndex = str.length - 1;
-  for (let i = 0; i < str.length / 2; i++) {
-    if (str[i] !== str[lastIndex - i]) {
-      return false;
-    }
-  }
-  return true;
-}
+//lesson3
+import { palindrome } from './Functions(lesson3)/palindrome.js';
 console.log(palindrome('шалаш'));
 console.log(palindrome('ротор'));
 console.log(palindrome('машина'));
 
-/*function min(a,b) {
-    if (a < b) {
-        return a;
-    }
-    return b;
-}
-*/
-function min(a, b) {
-  return a < b ? a : b;
-}
-
+import { min } from './Functions(lesson3)/min.js';
 console.log(min(3, 5));
 console.log(min(6, 4));
 
-/*function max(a,y) {
-    if (a > y) {
-        return a;
-    }
-    return y;
-}
- */
-function max(a, y) {
-  return a > y ? a : y;
-}
+import { max } from './Functions(lesson3)/max.js';
 console.log(max(4, 8));
 console.log(max(10, 2));
 
@@ -71,16 +45,9 @@ for (let i = 0; i < 10; i++) {
   randomArray.push(Math.round(Math.random() * 100));
 }
 console.log(randomArray);
-
-function replace(number) {
-  if (`${number}`.includes('0')) {
-    return `${number}`.replaceAll('0', 'zero');
-  } else {
-    return number;
-  }
-}
+import { replace } from './Functions(lesson3)/replaceItem.js';
 console.log(randomArray.map(replace));
-
+//lesson4
 function sum(a) {
   let currentSum = a;
   function f(b) {
@@ -95,24 +62,63 @@ function sum(a) {
 console.log(sum(5)(2).toString());
 console.log(sum(3)(7).toString());
 
-const colors = ['magenta', 'cyan', 'firebrick', 'springgreen', 'skyblue'];
-
 const p1 = document.getElementById('text1');
 const p2 = document.getElementById('text2');
 const p3 = document.getElementById('text3');
 const paragraphs = [p1, p2, p3];
-for (let i = 0; i < paragraphs.length; i++){
-  paragraphs[i].addEventListener("click", changeColor(paragraphs[i]))
+for (let i = 0; i < paragraphs.length; i++) {
+  paragraphs[i].addEventListener('click', changeColor(paragraphs[i]));
 }
-function changeColor(elem) {
-  let counter = 0;
-  return function () {
-    if (counter === colors.length) {
-      counter = 0;
-    }
-    elem.style.color = colors[counter];
-    counter++
-  }
-}
+import { changeColor } from './Functions(lesson4)/changeColor.js';
+//lesson5
+import { changeDate } from './String(lesson5)/changeData.js';
+console.log(changeDate('2020-11-28'));
+
+import { stringSearch } from './String(lesson5)/stringSearch.js';
+const data = [
+  {
+    country: 'Russia',
+    city: 'Saint Petersburg',
+    hotel: 'Hotel Leopold',
+  },
+  {
+    country: 'Spain',
+    city: 'Santa Cruz de Tenerife',
+    hotel: 'Apartment Sunshine',
+  },
+  {
+    country: 'Slowakia',
+    city: 'Vysokie Tatry',
+    hotel: 'Villa Kunerad',
+  },
+  {
+    country: 'Germany',
+    city: 'Berlin',
+    hotel: 'Hostel Friendship',
+  },
+  {
+    country: 'Indonesia',
+    city: 'Bali',
+    hotel: 'Ubud Bali Resort&SPA',
+  },
+  {
+    country: 'Netherlands',
+    city: 'Rotterdam',
+    hotel: 'King Kong Hostel',
+  },
+  {
+    country: 'Marocco',
+    city: 'Ourika',
+    hotel: 'Rokoko Hotel',
+  },
+  {
+    country: 'Germany',
+    city: 'Berlin',
+    hotel: 'Hotel Rehberge Berlin Mitte',
+  },
+];
+console.log(stringSearch(data, 'Berlin'));
+console.log(stringSearch(data, 'Russia'));
+console.log(stringSearch(data, 'Villa Kunerad'));
 
 module.exports = changeColor;
