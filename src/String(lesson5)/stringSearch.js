@@ -41,14 +41,14 @@ const data = [
   },
 ];
 
-export function stringSearch(dataArr, str) {
+export function stringSearch(str) {
   const resultSearch = [];
-  for (let i = 0; i < dataArr.length; i++) {
-    const searchItem = `${dataArr[i].country}, ${dataArr[i].city}, ${dataArr[i].hotel}`;
+  for (let i = 0; i < data.length; i++) {
+    const searchItem = `${data[i].country}, ${data[i].city}, ${data[i].hotel}`;
     if (searchItem.includes(str)) {
       resultSearch.push(searchItem);
     }
   }
-  return resultSearch;
+  return !resultSearch.length ? 'Error! No matches' : resultSearch;
 }
-console.log(stringSearch(data, 'Berlin'));
+console.log(stringSearch('Berlin'));
