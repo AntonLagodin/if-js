@@ -1,3 +1,10 @@
+import { palindrome } from './Functions(lesson3)/palindrome.js';
+import { min } from './Functions(lesson3)/min.js';
+import { max } from './Functions(lesson3)/max.js';
+import { replace } from './Functions(lesson3)/replaceItem.js';
+import { changeColor } from './Functions(lesson4)/changeColor.js';
+import { changeDate } from './String(lesson5)/changeData.js';
+import { stringSearch } from './String(lesson5)/stringSearch.js';
 //lesson2
 let user = 'John Doe';
 console.log(user);
@@ -27,16 +34,13 @@ for (let k = 0; k < arr1.length; k++) {
   }
 }
 //lesson3
-import { palindrome } from './Functions(lesson3)/palindrome.js';
 console.log(palindrome('шалаш'));
 console.log(palindrome('ротор'));
 console.log(palindrome('машина'));
 
-import { min } from './Functions(lesson3)/min.js';
 console.log(min(3, 5));
 console.log(min(6, 4));
 
-import { max } from './Functions(lesson3)/max.js';
 console.log(max(4, 8));
 console.log(max(10, 2));
 
@@ -45,7 +49,7 @@ for (let i = 0; i < 10; i++) {
   randomArray.push(Math.round(Math.random() * 100));
 }
 console.log(randomArray);
-import { replace } from './Functions(lesson3)/replaceItem.js';
+
 console.log(randomArray.map(replace));
 //lesson4
 function sum(a) {
@@ -69,16 +73,11 @@ const paragraphs = [p1, p2, p3];
 for (let i = 0; i < paragraphs.length; i++) {
   paragraphs[i].addEventListener('click', changeColor(paragraphs[i]));
 }
-import { changeColor } from './Functions(lesson4)/changeColor.js';
-//lesson5
-import { changeDate } from './String(lesson5)/changeData.js';
-console.log(changeDate('2020-11-28'));
 
-import { stringSearch } from './String(lesson5)/stringSearch.js';
+//lesson5
+console.log(changeDate('2020-11-28'));
 
 console.log(stringSearch('Berlin'));
 console.log(stringSearch('Russia'));
 console.log(stringSearch('Villa Kunerad'));
 console.log(stringSearch('Belarus'));
-
-module.exports = changeColor;
