@@ -1,3 +1,11 @@
+import { palindrome } from './Functions(lesson3)/palindrome.js';
+import { min } from './Functions(lesson3)/min.js';
+import { max } from './Functions(lesson3)/max.js';
+import { replace } from './Functions(lesson3)/replaceItem.js';
+import { changeColor } from './Functions(lesson4)/changeColor.js';
+import { changeDate } from './String(lesson5)/changeData.js';
+import { stringSearch } from './String(lesson5)/stringSearch.js';
+//lesson2
 let user = 'John Doe';
 console.log(user);
 const student = 'Anton Lagodin';
@@ -25,44 +33,14 @@ for (let k = 0; k < arr1.length; k++) {
     console.log(arr1[k]);
   }
 }
-function palindrome(str) {
-  str = str.toLowerCase().replace(/[^а-яa-z1-9]/gi, '');
-  const lastIndex = str.length - 1;
-  for (let i = 0; i < str.length / 2; i++) {
-    if (str[i] !== str[lastIndex - i]) {
-      return false;
-    }
-  }
-  return true;
-}
+//lesson3
 console.log(palindrome('шалаш'));
 console.log(palindrome('ротор'));
 console.log(palindrome('машина'));
 
-/*function min(a,b) {
-    if (a < b) {
-        return a;
-    }
-    return b;
-}
-*/
-function min(a, b) {
-  return a < b ? a : b;
-}
-
 console.log(min(3, 5));
 console.log(min(6, 4));
 
-/*function max(a,y) {
-    if (a > y) {
-        return a;
-    }
-    return y;
-}
- */
-function max(a, y) {
-  return a > y ? a : y;
-}
 console.log(max(4, 8));
 console.log(max(10, 2));
 
@@ -72,15 +50,8 @@ for (let i = 0; i < 10; i++) {
 }
 console.log(randomArray);
 
-function replace(number) {
-  if (`${number}`.includes('0')) {
-    return `${number}`.replaceAll('0', 'zero');
-  } else {
-    return number;
-  }
-}
 console.log(randomArray.map(replace));
-
+//lesson4
 function sum(a) {
   let currentSum = a;
   function f(b) {
@@ -95,24 +66,18 @@ function sum(a) {
 console.log(sum(5)(2).toString());
 console.log(sum(3)(7).toString());
 
-const colors = ['magenta', 'cyan', 'firebrick', 'springgreen', 'skyblue'];
-
 const p1 = document.getElementById('text1');
 const p2 = document.getElementById('text2');
 const p3 = document.getElementById('text3');
 const paragraphs = [p1, p2, p3];
-for (let i = 0; i < paragraphs.length; i++){
-  paragraphs[i].addEventListener("click", changeColor(paragraphs[i]))
-}
-function changeColor(elem) {
-  let counter = 0;
-  return function () {
-    if (counter === colors.length) {
-      counter = 0;
-    }
-    elem.style.color = colors[counter];
-    counter++
-  }
+for (let i = 0; i < paragraphs.length; i++) {
+  paragraphs[i].addEventListener('click', changeColor(paragraphs[i]));
 }
 
-module.exports = changeColor;
+//lesson5
+console.log(changeDate('2020-11-28'));
+
+console.log(stringSearch('Berlin'));
+console.log(stringSearch('Russia'));
+console.log(stringSearch('Villa Kunerad'));
+console.log(stringSearch('Belarus'));
