@@ -1,4 +1,4 @@
-const data = [
+const location = [
   {
     country: 'Russia',
     city: 'Saint Petersburg',
@@ -43,8 +43,8 @@ const data = [
 
 export function stringSearch(str) {
   const resultSearch = [];
-  for (let i = 0; i < data.length; i++) {
-    const searchItem = `${data[i].country}, ${data[i].city}, ${data[i].hotel}`;
+  for (let i = 0; i < location.length; i++) {
+    const searchItem = `${location[i].country}, ${location[i].city}, ${location[i].hotel}`;
     if (searchItem.includes(str)) {
       resultSearch.push(searchItem);
     }
