@@ -5,11 +5,6 @@ import { replace } from './Functions(lesson3)/replaceItem.js';
 import { changeColor } from './Functions(lesson4)/changeColor.js';
 import { changeDate } from './String(lesson5)/changeData.js';
 import { stringSearch } from './String(lesson5)/stringSearch.js';
-import { checkPalindrom } from './Array(lesson6)/palindrome1.js';
-import { searchHotel } from './Array(lesson6)/searchArray.js';
-import { uniqueLocation } from './Array(lesson6)/uniqueCountries.js';
-import { hotels } from './Array(lesson6)/searchArray.js';
-
 //lesson2
 let user = 'John Doe';
 console.log(user);
@@ -81,16 +76,8 @@ for (let i = 0; i < paragraphs.length; i++) {
 
 //lesson5
 console.log(changeDate('2020-11-28'));
+
 console.log(stringSearch('Berlin'));
 console.log(stringSearch('Russia'));
 console.log(stringSearch('Villa Kunerad'));
 console.log(stringSearch('Belarus'));
-
-//lesson6
-console.log(checkPalindrom('шалаш'));
-console.log(checkPalindrom('шиш'));
-console.log(checkPalindrom('машина'));
-console.log(searchHotel('Germany'));
-console.log(searchHotel('Edinburgh'));
-console.log(searchHotel('Asma Suites'));
-console.log(uniqueLocation(hotels));
