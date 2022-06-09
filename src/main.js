@@ -5,6 +5,11 @@ import { replace } from './Functions(lesson3)/replaceItem.js';
 import { changeColor } from './Functions(lesson4)/changeColor.js';
 import { changeDate } from './String(lesson5)/changeData.js';
 import { stringSearch } from './String(lesson5)/stringSearch.js';
+import { deepEqual } from './Object(lesson7)/deepEqual.js';
+import { obj1 } from './Object(lesson7)/deepEqual.js';
+import { obj2 } from './Object(lesson7)/deepEqual.js';
+import { obj3 } from './Object(lesson7)/deepEqual.js';
+
 //lesson2
 let user = 'John Doe';
 console.log(user);
@@ -81,3 +86,8 @@ console.log(stringSearch('Berlin'));
 console.log(stringSearch('Russia'));
 console.log(stringSearch('Villa Kunerad'));
 console.log(stringSearch('Belarus'));
+
+//lesson7
+console.log(deepEqual(obj1, obj2));
+console.log(deepEqual(obj1, obj3));
+console.log(deepEqual(obj2, obj3));
