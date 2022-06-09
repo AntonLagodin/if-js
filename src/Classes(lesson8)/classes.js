@@ -58,7 +58,7 @@ export class Students {
     this.students.sort(this.sortByYear('admissionYear'));
     return this.students.map(
       (student) =>
-        `${student.firstName} ${student.lastName} - ${student.courseName} ${
+        `${student.firstName} ${student.lastName} - ${student.courseName}, ${
           new Date().getFullYear() - student.admissionYear
         } курс`,
     );
