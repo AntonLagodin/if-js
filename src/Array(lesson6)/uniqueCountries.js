@@ -1,5 +1,5 @@
 export function uniqueLocation(array) {
-  const result = [];
+  const result = {};
   for (let i = 0; i < array.length; i++) {
     const { country, city } = array[i];
     if (result[country]) {
