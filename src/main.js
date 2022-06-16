@@ -12,6 +12,10 @@ import { obj3 } from './Object(lesson7)/deepEqual.js';
 import { Students, studentsData } from './Classes(lesson8)/classes.js';
 import { User } from './Classes(lesson8)/classes.js';
 import { Student } from './Classes(lesson8)/classes.js';
+import { checkPalindrom } from './Array(lesson6)/palindrome1.js';
+import { searchHotel } from './Array(lesson6)/searchArray.js';
+import { uniqueLocation } from './Array(lesson6)/uniqueCountries.js';
+import { hotels } from './Array(lesson6)/searchArray.js';
 
 //lesson2
 let user = 'John Doe';
@@ -102,3 +106,12 @@ const studentInfo = new Student('Anton', 'Lagodin', 2018, 'JavaScript');
 console.log(studentInfo.course + ' курс');
 const students = new Students(studentsData);
 console.log(students.getInfo);
+
+//lesson6
+console.log(checkPalindrom('шалаш'));
+console.log(checkPalindrom('шиш'));
+console.log(checkPalindrom('машина'));
+console.log(searchHotel('Germany'));
+console.log(searchHotel('Edinburgh'));
+console.log(searchHotel('Asma Suites'));
+console.log(uniqueLocation(hotels));
