@@ -9,6 +9,9 @@ import { deepEqual } from './Object(lesson7)/deepEqual.js';
 import { obj1 } from './Object(lesson7)/deepEqual.js';
 import { obj2 } from './Object(lesson7)/deepEqual.js';
 import { obj3 } from './Object(lesson7)/deepEqual.js';
+import { Students, studentsData } from './Classes(lesson8)/classes.js';
+import { User } from './Classes(lesson8)/classes.js';
+import { Student } from './Classes(lesson8)/classes.js';
 
 //lesson2
 let user = 'John Doe';
@@ -91,3 +94,11 @@ console.log(stringSearch('Belarus'));
 console.log(deepEqual(obj1, obj2));
 console.log(deepEqual(obj1, obj3));
 console.log(deepEqual(obj2, obj3));
+
+//lesson8
+const userData = new User('Anton', 'Lagodin');
+console.log(userData.fullName);
+const studentInfo = new Student('Anton', 'Lagodin', 2018, 'JavaScript');
+console.log(studentInfo.course + ' курс');
+const students = new Students(studentsData);
+console.log(students.getInfo);
