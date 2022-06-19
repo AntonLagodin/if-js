@@ -2,7 +2,7 @@ import { palindrome } from './Functions(lesson3)/palindrome.js';
 import { min } from './Functions(lesson3)/min.js';
 import { max } from './Functions(lesson3)/max.js';
 import { replace } from './Functions(lesson3)/replaceItem.js';
-import { changeColor } from './Functions(lesson4)/changeColor.js';
+//import { changeColor } from './Functions(lesson4)/changeColor.js';
 import { changeDate } from './String(lesson5)/changeData.js';
 import { stringSearch } from './String(lesson5)/stringSearch.js';
 import { deepEqual } from './Object(lesson7)/deepEqual.js';
@@ -16,6 +16,7 @@ import { checkPalindrome } from './Array(lesson6)/palindrome1.js';
 import { searchHotel } from './Array(lesson6)/searchArray.js';
 import { uniqueLocation } from './Array(lesson6)/uniqueCountries.js';
 import { hotels } from './Array(lesson6)/searchArray.js';
+import { colors } from './Iteartor(lesson9)/colorsIterator.js';
 
 //lesson2
 let user = 'John Doe';
@@ -78,17 +79,16 @@ function sum(a) {
 console.log(sum(5)(2).toString());
 console.log(sum(3)(7).toString());
 
-const p1 = document.getElementById('text1');
-const p2 = document.getElementById('text2');
-const p3 = document.getElementById('text3');
-const paragraphs = [p1, p2, p3];
-for (let i = 0; i < paragraphs.length; i++) {
-  paragraphs[i].addEventListener('click', changeColor(paragraphs[i]));
-}
+//const p1 = document.getElementById('text1');
+//const p2 = document.getElementById('text2');
+//const p3 = document.getElementById('text3');
+//const paragraphs = [p1, p2, p3];
+//for (let i = 0; i < paragraphs.length; i++) {
+//  paragraphs[i].addEventListener('click', changeColor(paragraphs[i]));
+//}
 
 //lesson5
 console.log(changeDate('2020-11-28'));
-
 console.log(stringSearch('Berlin'));
 console.log(stringSearch('Russia'));
 console.log(stringSearch('Villa Kunerad'));
@@ -115,3 +115,12 @@ console.log(searchHotel('Germany'));
 console.log(searchHotel('Edinburgh'));
 console.log(searchHotel('Asma Suites'));
 console.log(uniqueLocation(hotels));
+
+//lesson9
+const paragraphsIt = document.getElementsByTagName('p');
+for (const paragraph of paragraphsIt) {
+  const colorsIterator = colors[Symbol.iterator]();
+  paragraph.onclick = function () {
+    this.style.color = colorsIterator.next().value;
+  };
+}
