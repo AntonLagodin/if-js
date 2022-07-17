@@ -1,5 +1,5 @@
 //lesson10
-import {hotelsInfo} from "./arrays/DOM.js";
+import { hotelsInfo } from './arrays/DOM.js';
 const homesList = document.getElementById('homes__list');
 hotelsInfo.forEach((item) => {
   homesList.innerHTML += `
@@ -9,5 +9,3 @@ hotelsInfo.forEach((item) => {
             <p class="homes__desc">${item.city}, ${item.country}</p>
           </li>`;
 });
-
-console.log(1);
