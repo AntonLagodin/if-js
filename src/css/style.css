@@ -516,7 +516,8 @@ button {
 
 .homes__image {
   margin-bottom: 24px;
-  max-width: 100%;
+  width: 296px;
+  height: 296px;
 }
 
 .homes__subtitle {
