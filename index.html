@@ -63,9 +63,48 @@
                   <label class="label--date--second">Check-out</label>
                 </div>
               </div>
-              <input type="text" name="guests" class="col--guests col-md-12 col-lg-12 col-12" required/>
+              <input type="text" name="guests" class="col--guests col-md-12 col-lg-12 col-12" id="guests__input" required/>
               <label class="label--guests">2 Adults &#8212; 0 Children &#8212; 1 Room</label>
               <button class="col--button button__text col-md-12 col-md-12 col-12"> Search</button>
+            </div>
+            <div class="guests__modal" id="guests__modal">
+              <div class="guests__modal-wrap">
+                <div class="guests__modal-item">
+                  <div class="guests__modal-desc">
+                    <p class="guests__modal-text">Adults</p>
+                  </div>
+                  <div class="guests__modal-count">
+                    <button class="guests__modal-btn--minus">&#8211</button>
+                    <p class="guests__modal-value guests__modal-value--adults">0</p>
+                    <button class="guests__modal-btn--plus" data-max = "30">+</button>
+                  </div>
+                </div>
+                <div class="guests__modal-item">
+                  <div class="guests__modal-desc">
+                    <p class="guests__modal-text">Children</p>
+                  </div>
+                  <div class="guests__modal-count">
+                    <button class="guests__modal-btn--minus guests__modal-btn--delete">&#8211</button>
+                    <p class="guests__modal-value guests__modal-value--adults">0</p>
+                    <button class="guests__modal-btn--plus guests__modal-btn--add" data-max = "10">+</button>
+                  </div>
+                </div>
+                <div class="guests__modal-item">
+                  <div class="guests__modal-desc">
+                    <p class="guests__modal-text">Rooms</p>
+                  </div>
+                  <div class="guests__modal-count">
+                    <button class="guests__modal-btn--minus">&#8211</button>
+                    <p class="guests__modal-value guests__modal-value--adults">0</p>
+                    <button class="guests__modal-btn--plus" data-max = "30">+</button>
+                  </div>
+                </div>
+                <div class="guests__modal-children-info">
+                  <h4>What is the age of the child you’re travelling with?</h4>
+                  <div class="guests__modal-children-box">
+                  </div>
+                </div>
+              </div>
             </div>
           </form>
         </article>

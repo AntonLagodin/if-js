@@ -221,7 +221,6 @@ input:not(:focus):valid ~ .label--place {
   top: 20px;
 }
 
-
 .input--date--wrap {
   display: flex;
   width: 22%;
@@ -296,6 +295,70 @@ button {
   display: flex;
   justify-content: center;
 }
+.guests__modal{
+  display: none;
+  position: absolute;
+  width: 239px;
+  height: auto;
+  border-radius: var(--radius);
+  background-color: #fff;
+  top: 628px;
+  left: 888px;
+  border: 1px solid #333333;
+  color: #333333;
+}
+
+.guests__modal-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 22px;
+}
+
+.guests__modal-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.guests__modal-count {
+  display: flex;
+  gap: 20px;
+  align-items: center
+}
+
+.guests__modal-text, .guests__modal-value {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: var(--line-height);
+  align-items: center;
+}
+
+.guests__modal-btn--minus, .guests__modal-btn--plus {
+  width: 30px;
+  height: 30px;
+  background-color: #ffffff;
+  border: 1px solid var(--color-seconadary);
+  border-radius: 0;
+  color: var(--color-seconadary);
+}
+
+.guests__modal-children-info {
+  font-size: 12px;
+  font-weight: 400;
+  color: #333333;
+  line-height: var(--line-height);
+}
+
+.guests__modal-children-select {
+  margin-top: 12px;
+  font-size: 12px;
+  font-weight: 400;
+  padding: 8px;
+  border: 1px solid var(--color-seconadary);
+  color: #333333;
+}
+
 /*
 .start-page {
   min-height: 100vh;
