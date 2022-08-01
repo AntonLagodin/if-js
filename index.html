@@ -45,10 +45,10 @@
           to live, work or just relax
         </p>
         <article class="container--form col-md-12 col-lg-12 col-12">
-          <form action="/" method="post">
+          <form id="search__form" action="/" method="post">
             <div class="row--form">
               <div class="input--place--wrap">
-                <input type="text" name="place" class="col--place col-md-12 col-lg-12 col-12" required/>
+                <input id="search__destination" type="text" name="place" class="col--place col-md-12 col-lg-12 col-12" required/>
                 <label class="label--place">Your destination or hotel name</label>
               </div>
               <div class="input--date--wrap">
@@ -112,6 +112,12 @@
           <img src="./src/images/apps-compress.svg" alt="Apps"/>
         </div>
       </section>
+    </div>
+    <div class="available__hotels">
+      <h2 class="available__hotels-title">Available Hotels</h2>
+        <ul id="available__hotels" class="available__hotels-list">
+          <li class="available__hotels-item"></li>
+        </ul>
     </div>
     <!--advantages-->
     <section class="advantages">
