@@ -31,14 +31,14 @@ const input = document.getElementById('guests__input');
 const modal = document.getElementById('guests__modal');
 
 const modalVisible = () => {
-    modal.style.display = 'block';
-}
+  modal.style.display = 'block';
+};
 
 const modalInvisible = (event) => {
-    if(event.target.contains(modal)) {
-        modal.style.display = 'none';
-    }
-}
+  if (event.target.contains(modal)) {
+    modal.style.display = 'none';
+  }
+};
 
 input.addEventListener('click', modalVisible);
 window.addEventListener('click', modalInvisible);
@@ -48,37 +48,37 @@ const btnMinus = document.querySelectorAll('.guests__modal-btn--minus');
 const valueField = document.querySelectorAll('.guests__modal-value');
 
 const changeType = {
-    plus: 'plus',
-    minus: 'minus',
-}
+  plus: 'plus',
+  minus: 'minus',
+};
 
 const changeValue = (currentValue, type, limit) => {
-    let result = currentValue;
-    if (currentValue === limit) {
-        return result;
-    }
-
-    if(type === changeType.plus) {
-        result = currentValue + 1;
-        return result;
-    }
-
-    result = currentValue - 1;
+  let result = currentValue;
+  if (currentValue === limit) {
     return result;
-}
+  }
+
+  if (type === changeType.plus) {
+    result = currentValue + 1;
+    return result;
+  }
+
+  result = currentValue - 1;
+  return result;
+};
 
 btnPlus.forEach((btn, index) => {
-    btn.addEventListener('click', () => {
-        const value = +valueField[index].textContent;
-        valueField[index].textContent = changeValue(value, changeType.plus, +btn.dataset.max);
-    })
+  btn.addEventListener('click', () => {
+    const value = +valueField[index].textContent;
+    valueField[index].textContent = changeValue(value, changeType.plus, +btn.dataset.max);
+  });
 });
 
 btnMinus.forEach((btn, index) => {
-    btn.addEventListener('click', () => {
-        const value = +valueField[index].textContent;
-        valueField[index].textContent = changeValue(value, changeType.minus, 0);
-    })
+  btn.addEventListener('click', () => {
+    const value = +valueField[index].textContent;
+    valueField[index].textContent = changeValue(value, changeType.minus, 0);
+  });
 });
 
 const btnAdd = document.querySelector('.guests__modal-btn--add');
@@ -106,24 +106,50 @@ const child = `<select name="select" class="guests__modal-children-select">
 </select>`;
 
 btnAdd.addEventListener('click', () => {
-    const allChildren = document.querySelectorAll('.guests__modal-children-select').length;
+  const allChildren = document.querySelectorAll('.guests__modal-children-select').length;
 
-    if (allChildren === +btnAdd.dataset.max) {
-        return;
-    }
-    childrenWrap.style.display = 'block';
-    childrenContainer.insertAdjacentHTML('afterbegin', child);
-})
+  if (allChildren === +btnAdd.dataset.max) {
+    return;
+  }
+  childrenWrap.style.display = 'block';
+  childrenContainer.insertAdjacentHTML('afterbegin', child);
+});
 
-btnDelete.addEventListener('click', ()=>{
-    const allChildren = document.querySelectorAll('.guests__modal-children-select');
+btnDelete.addEventListener('click', () => {
+  const allChildren = document.querySelectorAll('.guests__modal-children-select');
 
-    if(allChildren.length > 0){
-        allChildren[allChildren.length-1].remove();
-    }
+  if (allChildren.length > 0) {
+    allChildren[allChildren.length - 1].remove();
+  }
 
-    if(allChildren.length === 1){
-        childrenWrap.style.display = 'none';
-    }
+  if (allChildren.length === 1) {
+    childrenWrap.style.display = 'none';
+  }
+});
 
-})
+//lesson13
+
+const searchForm = document.getElementById('search__form');
+
+searchForm.addEventListener('submit', (event) => {
+  event.preventDefault();
+
+  const url = 'https://fe-student-api.herokuapp.com/api/hotels?search';
+  const searchDestination = document.getElementById('search__destination');
+  const searchDestinationValue = searchDestination.value;
+  const availableHotels = document.getElementById('available__hotels');
+
+  fetch(`${url} = ${searchDestinationValue}`)
+    .then((response) => response.json())
+    .then((hotels) => {
+      hotels.forEach((hotel) => {
+        availableHotels.innerHTML += `
+                    <li id = "${hotel.id}" class="available__hotels-item">
+                    <img src="${hotel.imageUrl}" alt="${hotel.name}" class="available__hotels-image" />
+                    <h3 class="available__hotels-subtitle">${hotel.name}</h3>
+                    <p class="available__hotels-desc">${hotel.city}, ${hotel.country}</p>
+                    </li>`;
+      });
+    })
+    .catch((err) => console.log(err));
+});
